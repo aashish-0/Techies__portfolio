@@ -1,0 +1,704 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+// Variables
+$orange: #cb6036;
+$grey: #676767;
+$lightGrey: #939393;
+
+// MIXINS
+@mixin list-items {
+    list-style: none;
+}
+
+@mixin anchor {
+    text-decoration: none;
+    display: inline-block;
+}
+
+@mixin image {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+@mixin container {
+    max-width: 1320px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+@mixin flexbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin partialFlex {
+    display: flex;
+}
+
+@mixin transition {
+    transition: all ease-in .3s;
+}
+
+@mixin btn {
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.4rem 3.2rem;
+    border-radius: 8px;
+    border: 0;
+    color: #fff;
+    width: 300px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background-size: 100% 100%;
+    background-color: transparent;
+    backdrop-filter: blur(9px);
+}
+
+@mixin primary-btn {
+    background-color: transparent;
+    mix-blend-mode: screen;
+    position: relative;
+    z-index: 1;
+    background-image: conic-gradient(from 90deg at 0% 0%,
+            transparent 0%,
+            rgb(255, 255, 255) 25%,
+            transparent),
+        conic-gradient(from -90deg at 100% 100%,
+            transparent 0%,
+            rgba(255, 255, 255, 0.8) 25%,
+            transparent);
+    transition: background-color 1s;
+    font-size: 1.5rem;
+}
+
+@mixin primary--btn-hover {
+    animation: ox-background-primary 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86) alternate forwards;
+}
+
+@keyframes ox-background-primary {
+    100% {
+        background-image: conic-gradient(from 90deg at 0% 0%,
+                transparent 0%,
+                rgb(0, 0, 0) 25%,
+                transparent),
+            conic-gradient(from -90deg at 100% 100%,
+                transparent 0%,
+                rgb(0, 0, 0) 25%,
+                transparent);
+    }
+}
+
+@mixin secondary-btn {
+    background-color: transparent;
+    mix-blend-mode: screen;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+    background-image: conic-gradient(from 90deg at 0% 0%,
+            transparent 0%,
+            rgba(255, 115, 0, 0.3) 25%,
+            transparent),
+        conic-gradient(from -90deg at 100% 100%,
+            transparent 0%,
+            rgba(0, 255, 157, 0.1) 25%,
+            transparent);
+    transition: background-color 1s;
+    font-size: 1.5rem;
+}
+
+@mixin secondary--btn-hover {
+    animation: ox-background-secondary 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86) alternate forwards;
+}
+
+@keyframes ox-background-secondary {
+    100% {
+        background-image: conic-gradient(from 90deg at 0% 0%,
+                transparent 0%,
+                rgba(0, 255, 157, 0.15) 25%,
+                transparent),
+            conic-gradient(from -90deg at 100% 100%,
+                transparent 0%,
+                rgba(255, 0, 144, 0.8) 25%,
+                transparent);
+    }
+}
+
+li {
+    @include list-items;
+}
+
+a {
+    @include anchor;
+}
+
+img {
+    @include image;
+}
+
+.container {
+    @include container;
+
+    @media(min-width: 320px) and (max-width: 480px) {
+        max-width: 300px;
+    }
+
+    @media(min-width: 480px) and (max-width: 576px) {
+        max-width: 400px;
+    }
+
+
+    @media(min-width: 576px) and (max-width: 768px) {
+        max-width: 700px;
+    }
+
+    // @media(min-width: 768px) and (max-width: 900px) {
+    //     max-width: 700px;
+    // }
+
+}
+
+.btn {
+    @include btn;
+
+    @media (min-width:320px) and (max-width: 768px) {
+        padding: 10px 30px;
+        width: 130px;
+    }
+}
+
+.btn--primary {
+    @include primary-btn;
+}
+
+.btn--primary:hover {
+    @include primary--btn-hover;
+}
+
+.btn--secondary {
+    @include secondary-btn;
+
+    @media(min-width: 320px)and (max-width: 768px) {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+.btn--secondary:hover {
+    @include secondary--btn-hover;
+}
+
+header {
+    position: relative;
+}
+
+.header {
+    padding: 20px;
+    @include flexbox;
+    flex-direction: column;
+    position: absolute;
+    background-color: #ffffff9f;
+    top: 0;
+    width: 100%;
+    left: 0;
+    z-index: 1;
+
+    @media (min-width:320px) and (max-width: 768px) {
+        padding: 10px 20px;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    &__brandLogo {
+        a {
+            img {
+                width: 200px;
+
+                @media (min-width: 320px)and (max-width: 768px) {
+                    width: 100px;
+                }
+            }
+        }
+
+        margin-bottom: 20px;
+        height: 100%;
+
+        @media (min-width:320px)and (max-width: 768px) {
+            margin-bottom: 0px;
+        }
+    }
+
+    @media (min-width:320px) and (max-width: 768px) {
+        &__brandnav {
+            background: red;
+            padding: 100px 60px;
+            width: 80%;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            right: -256px;
+            visibility: hidden;
+            pointer-events: none;
+            user-select: none;
+            @include transition;
+        }
+    }
+
+    &__navigations {
+        display: flex;
+        align-items: center;
+        gap: 150px;
+
+        @media(min-width:320px)and (max-width: 768px) {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        li {
+            a {
+                font-size: 2.5rem;
+                color: #000;
+                font-weight: 500;
+                @include transition;
+
+                @media(min-width:320px)and (max-width: 768px) {
+                    font-size: 1rem;
+                }
+            }
+
+            a:hover {
+                color: $orange;
+            }
+        }
+    }
+
+    .fa-bars {
+        display: none;
+
+        @media(min-width:320px)and (max-width: 768px) {
+            display: block;
+        }
+    }
+}
+
+main {
+    z-index: 9;
+}
+
+.banner {
+    position: relative;
+
+    video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center center;
+        opacity: 1;
+        max-height: 900px;
+
+        @media(min-width:320px) and (max-width: 768px) {
+            height: 500px;
+        }
+    }
+
+    &__content--wrapper {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        color: #fff;
+
+        @media(min-width: 320px)and (max-width: 768px) {
+            top: 30%;
+        }
+    }
+
+    &__content {
+        background-color: rgba(0, 0, 0, 0.634);
+        padding: 20px;
+
+        a {
+            font-size: 1.3rem;
+
+            @media(min-width:320px)and (max-width: 768px) {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    &__content--heading {
+        font-size: 5rem;
+
+        @media(min-width:320px) and (max-width: 768px) {
+            font-size: 2.3rem;
+        }
+    }
+
+    &__content--supportText {
+        font-size: 1.7rem;
+        margin-bottom: 30px;
+
+        @media(min-width:320px)and (max-width: 768px) {
+            font-size: 1rem;
+        }
+    }
+
+}
+
+.introduction {
+    background-color: $orange;
+
+    &__content {
+        padding-block: 60px;
+        text-align: center;
+
+        p {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 50px;
+            line-height: 60px;
+
+            @media(min-width: 320px) and (max-width: 768px) {
+                font-size: 1rem;
+                line-height: 35px;
+            }
+        }
+    }
+}
+
+.expertise {
+    padding-block: 100px;
+
+    @media(min-width: 320px) and (max-width: 768px) {
+        padding-block: 60px;
+    }
+
+    &__wrapper {
+        @include flexbox;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__leftSide {
+        width: 40%;
+
+        @media(min-width: 320px) and (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    &__rightSide {
+        width: 60%;
+        padding-left: 40px;
+
+        @media(min-width: 320px) and (max-width: 768px) {
+            width: 100%;
+            padding-left: 0px;
+        }
+    }
+
+    svg {
+        width: 600px;
+        height: 600px;
+
+    }
+
+    &__card--wrapper {
+        @include flexbox;
+        flex-wrap: wrap;
+    }
+
+    &__card {
+        width: 50%;
+        padding: 20px;
+        border-radius: 20px;
+        text-align: center;
+
+        @media(min-width: 320px) and (max-width: 768px) {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+
+    @media(min-width: 320px) and (max-width: 768px) {
+
+        &__card:nth-child(2),
+        &__card:nth-child(3) {
+            background-color: #eee;
+        }
+    }
+
+    &__card:nth-child(1),
+    &__card:nth-child(4) {
+        .expertise__heading {
+            color: #fff;
+        }
+
+        background-color: $orange;
+    }
+
+    &__heading {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        font-weight: 500;
+
+        @media(min-width: 320px) and (max-width: 768px) {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__supportText {
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+
+        @media(min-width: 320px) and (max-width: 768px) {
+            font-size: 1rem;
+        }
+    }
+
+    &__button {
+        a {
+            color: $orange ;
+            background-color: #fff;
+            border-radius: 50px;
+            font-weight: 500;
+            padding: 10px 30px;
+
+            @media(min-width: 320px) and (max-width: 768px) {
+                padding: 5px 30px;
+            }
+        }
+
+        a:hover {
+            background-color: $orange;
+            color: #fff;
+        }
+    }
+
+}
+
+.contact {
+    &__heading {
+        font-size: 4rem;
+        text-align: center;
+        margin-bottom: 50px;
+
+        @media(min-width: 320px) and (max-width: 768px) {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-weight: 400;
+        }
+
+        span {
+            color: $orange;
+            font-weight: 600;
+        }
+    }
+
+    &__wrapper {
+        @include partialFlex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__leftSide {
+        background-color: $lightGrey;
+        color: #fff;
+        padding: 20px;
+        border-radius: 20px;
+
+        @media(min-width: 320px) and (max-width: 768px) {
+            padding: 20px 30px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__leftSide,
+    &__rightSide {
+        width: 50%;
+
+        @media(min-width: 320px) and (max-width: 768px) {
+            width: 100%;
+        }
+    }
+
+    &__content,
+    &__form {
+        padding-inline: 30px;
+
+        @media(min-width: 320px) and (max-width: 768px) {
+            padding-inline: 0px;
+        }
+    }
+
+    &__content {
+        @media(min-width: 320px) and (max-width: 768px) {
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.5rem;
+
+            @media(min-width: 320px) and (max-width: 768px) {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+.contact__form {
+    font-family: 'Poppins', sans-serif;
+
+    &--title {
+        color: #3F444C;
+        text-transform: uppercase;
+        font-size: 2.5rem;
+        letter-spacing: 0.5rem;
+        font-weight: 300;
+
+        @media(min-width: 320px) and (max-width: 768px) {
+            text-align: center;
+        }
+    }
+
+    &--description {
+        color: #818386;
+        font-size: 0.9rem;
+        letter-spacing: 0.01rem;
+        width: 40vw;
+        margin: 0.25rem 0;
+
+        @media(min-width: 320px) and (max-width: 768px) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    label {
+        color: #818386;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        margin-bottom: 1.3rem;
+    }
+
+    form {
+        width: 31.25rem;
+        position: relative;
+        margin-top: 2rem;
+        padding: 1rem 0;
+
+        @media(min-width: 320px) and (max-width: 768px) {
+            width: 100%;
+        }
+    }
+
+    input,
+    textarea,
+    label {
+        width: 40vw;
+        display: block;
+
+        @media(min-width: 320px) and (max-width: 768px) {
+            width: 100%;
+        }
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        color: #010712;
+        font-size: 1rem;
+    }
+
+    input,
+    textarea {
+        color: #010712;
+        font-weight: 500;
+        background: #FCFDFD;
+        border: none;
+        border-bottom: 1px solid #818386;
+        padding: 0.5rem 0;
+        margin-bottom: 1rem;
+        outline: none;
+        font-size: 1rem;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    button {
+        text-transform: uppercase;
+        font-weight: 300;
+        background: $orange;
+        letter-spacing: 2px;
+        color: #FCFDFD;
+        width: 10rem;
+        height: 2.25rem;
+        border: none;
+        border-radius: 2px;
+        outline: none;
+        cursor: pointer;
+    }
+
+    input:hover,
+    textarea:hover {
+        opacity: 0.5;
+    }
+}
+
+
+footer {
+    background: none repeat scroll 0 0 #eeeeee;
+    padding-block: 60px;
+    margin-top: 60px;
+
+    @media(min-width: 320px) and (max-width: 768px) {
+        padding-block: 20px;
+    }
+}
+
+.footer {
+    text-align: center;
+
+    ul {
+        li {
+            display: inline-block;
+            margin: 0 20px 40px;
+            text-transform: uppercase;
+
+            @media(min-width: 320px) and (max-width: 768px) {
+                margin: 0 10px 20px;
+            }
+
+            a {
+                color: #000;
+                border-bottom: rgba(0, 0, 0, 0) 2px solid;
+                padding-bottom: 5px;
+                letter-spacing: 2px;
+            }
+        }
+    }
+
+    &__monospace {
+        font-weight: 400;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+}
