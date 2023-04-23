@@ -8,16 +8,6 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-@keyframes ox-background-primary {
-  100% {
-    background-image: conic-gradient(from 90deg at 0% 0%, transparent 0%, rgb(0, 0, 0) 25%, transparent), conic-gradient(from -90deg at 100% 100%, transparent 0%, rgb(0, 0, 0) 25%, transparent);
-  }
-}
-@keyframes ox-background-secondary {
-  100% {
-    background-image: conic-gradient(from 90deg at 0% 0%, transparent 0%, rgba(0, 255, 157, 0.15) 25%, transparent), conic-gradient(from -90deg at 100% 100%, transparent 0%, rgba(255, 0, 144, 0.8) 25%, transparent);
-  }
-}
 li {
   list-style: none;
 }
@@ -25,7 +15,6 @@ li {
 a {
   text-decoration: none;
   display: inline-block;
-
 }
 
 img {
@@ -56,22 +45,16 @@ img {
 }
 
 .btn {
-  user-select: none;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.4rem 3.2rem;
-  border-radius: 8px;
-  border: 0;
+  padding: 10px 20px;
   color: #fff;
   width: 300px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  background-size: 100% 100%;
-  background-color: transparent;
-  backdrop-filter: blur(9px);
+  font-size: 1.5rem;
+  border-radius: 50px;
 }
 @media (min-width: 320px) and (max-width: 768px) {
   .btn {
@@ -81,29 +64,26 @@ img {
 }
 
 .btn--primary {
-  background-color: transparent;
-  mix-blend-mode: screen;
-  position: relative;
-  z-index: 1;
-  background-image: conic-gradient(from 90deg at 0% 0%, transparent 0%, rgb(255, 255, 255) 25%, transparent), conic-gradient(from -90deg at 100% 100%, transparent 0%, rgba(255, 255, 255, 0.8) 25%, transparent);
-  transition: background-color 1s;
-  font-size: 1.5rem;
+  background-color: #cb6036;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn--primary:hover {
-  animation: ox-background-primary 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86) alternate forwards;
+  background-color: #000000;
+  color: #ff9933;
 }
 
 .btn--secondary {
   background-color: transparent;
-  mix-blend-mode: screen;
-  position: relative;
-  z-index: 1;
-  display: inline-block;
-  text-align: center;
-  background-image: conic-gradient(from 90deg at 0% 0%, transparent 0%, rgba(255, 115, 0, 0.3) 25%, transparent), conic-gradient(from -90deg at 100% 100%, transparent 0%, rgba(0, 255, 157, 0.1) 25%, transparent);
-  transition: background-color 1s;
-  font-size: 1.5rem;
+  border: 4px solid #cb6036;
+  color: #cb6036;
+  width: 200px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
 }
 @media (min-width: 320px) and (max-width: 768px) {
   .btn--secondary {
@@ -113,7 +93,9 @@ img {
 }
 
 .btn--secondary:hover {
-  animation: ox-background-secondary 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86) alternate forwards;
+  background-color: #000000;
+  color: #fff;
+  border: 4px solid #000000;
 }
 
 header {
@@ -121,16 +103,13 @@ header {
 }
 
 .header {
-  padding: 20px;
+  padding-top: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  position: absolute;
+  justify-content: space-between;
   background-color: rgba(255, 255, 255, 0.6235294118);
-  top: 0;
   width: 100%;
-  left: 0;
   z-index: 1;
 }
 @media (min-width: 320px) and (max-width: 768px) {
@@ -175,9 +154,7 @@ header {
 .header__navigations {
   display: flex;
   align-items: center;
-  gap: 160px;
-  color: #cb6036;
-
+  gap: 90px;
 }
 @media (min-width: 320px) and (max-width: 768px) {
   .header__navigations {
@@ -186,7 +163,7 @@ header {
   }
 }
 .header__navigations li a {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #000;
   font-weight: 500;
   transition: all ease-in 0.3s;
@@ -198,6 +175,7 @@ header {
 }
 .header__navigations li a:hover {
   color: #cb6036;
+  text-decoration: underline;
 }
 .header .fa-bars {
   display: none;
@@ -230,7 +208,7 @@ main {
 }
 .banner__content--wrapper {
   position: absolute;
-  top: 50%;
+  top: 20%;
   width: 100%;
   color: #fff;
 }
@@ -241,10 +219,7 @@ main {
 }
 .banner__content {
   background-color: rgba(0, 0, 0, 0.634);
-  padding: 20px;
-}
-.banner__content a {
-  font-size: 1.3rem;
+  padding: 100px 20px;
 }
 @media (min-width: 320px) and (max-width: 768px) {
   .banner__content a {
@@ -269,16 +244,13 @@ main {
   }
 }
 
-.introduction {
-  background-color: #cb6036;
-}
 .introduction__content {
   padding-block: 60px;
   text-align: center;
 }
 .introduction__content p {
   font-size: 2rem;
-  color: #fff;
+  color: #000000;
   margin-bottom: 50px;
   line-height: 60px;
 }
@@ -287,6 +259,9 @@ main {
     font-size: 1rem;
     line-height: 35px;
   }
+}
+.introduction__button a {
+  margin: 0 auto;
 }
 
 .expertise {
@@ -566,8 +541,13 @@ footer {
 .footer {
   text-align: center;
 }
+.footer ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
 .footer ul li {
-  display: inline-block;
   margin: 0 20px 40px;
   text-transform: uppercase;
 }
@@ -581,6 +561,9 @@ footer {
   border-bottom: rgba(0, 0, 0, 0) 2px solid;
   padding-bottom: 5px;
   letter-spacing: 2px;
+}
+.footer ul li a i {
+  font-size: 2rem;
 }
 .footer__monospace {
   font-weight: 400;
