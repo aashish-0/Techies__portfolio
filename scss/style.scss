@@ -453,6 +453,8 @@ main {
 }
 
 .contact {
+    padding-bottom: 60px;
+
     &__heading {
         font-size: 4rem;
         text-align: center;
@@ -633,7 +635,6 @@ main {
 footer {
     background: none repeat scroll 0 0 #eeeeee;
     padding-block: 60px;
-    margin-top: 60px;
 
     @media(min-width: 320px) and (max-width: 768px) {
         padding-block: 20px;
@@ -677,3 +678,283 @@ footer {
 
 
 // ABOUT US PAGE
+
+.vision {
+    background-color: #e3e0e0;
+
+    &__heading {}
+}
+
+.vision {
+    padding-block: 60px;
+
+    &__heading {
+        text-align: center;
+        margin-bottom: 50px;
+
+        .like-text.popup-text {
+            font-size: 50px;
+            font-weight: 900;
+            letter-spacing: 5px;
+
+            .text-effect {
+                position: relative;
+                display: inline-block;
+                color: #FFF;
+                font-family: "Oswald", sans-serif;
+                font-size: 70px;
+                font-weight: bolder;
+                text-align: center;
+                letter-spacing: 20px;
+                transition: 0.5s;
+                text-shadow: 0 5px 0 black, 0 10px 40px rgba(0, 0, 0, 0.2), 0 20px 30px rgba(0, 0, 0, 0.2), 0 30px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            .text-effect:hover {
+                text-shadow: -10px 10px 0 black, 0 10px 40px rgba(0, 0, 0, 0.2), 0 20px 30px rgba(0, 0, 0, 0.5), 20px 20px 20px rgba(0, 0, 0, 0.5);
+            }
+
+            .text-effect:nth-child(1):before,
+            .text-effect:nth-child(2)::before,
+            .text-effect:nth-child(3)::before,
+            .text-effect:nth-child(4)::before,
+            .text-effect:nth-child(5)::before,
+            .text-effect:nth-child(6)::before {
+                top: -5px;
+                left: 0;
+                position: absolute;
+                text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+                color: $orange;
+                transition: 0.5s;
+                z-index: 1;
+                content: "V";
+            }
+
+            .text-effect:nth-child(2)::before {
+                content: 'I';
+            }
+
+            .text-effect:nth-child(3)::before {
+                content: 'S';
+            }
+
+            .text-effect:nth-child(4)::before {
+                content: 'I';
+            }
+
+            .text-effect:nth-child(5)::before {
+                content: 'O';
+            }
+
+            .text-effect:nth-child(6)::before {
+                content: 'N';
+            }
+
+            .text-effect:hover::before {
+                top: -10px;
+                left: 10px;
+            }
+
+            .text-effect:nth-child(1):after,
+            .text-effect:nth-child(2):after,
+            .text-effect:nth-child(3):after,
+            .text-effect:nth-child(4):after,
+            .text-effect:nth-child(5):after,
+            .text-effect:nth-child(6):after {
+                top: -10px;
+                left: 0;
+                position: absolute;
+                text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+                color: #fff;
+                transition: 0.5s;
+                content: "V";
+                z-index: 2;
+            }
+
+            .text-effect:nth-child(2):after {
+                content: 'I';
+            }
+
+            .text-effect:nth-child(3):after {
+                content: 'S';
+            }
+
+            .text-effect:nth-child(4):after {
+                content: 'I';
+            }
+
+            .text-effect:nth-child(5):after {
+                content: 'O';
+            }
+
+            .text-effect:nth-child(6):after {
+                content: 'N';
+            }
+
+            .text-effect:hover::after {
+                top: -20px;
+                left: 20px;
+            }
+        }
+    }
+
+    &__supportContent {
+        .main--text {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+    }
+}
+
+.whatwedo {
+    padding-block: 60px;
+    background-color: #000000;
+
+    &__heading {
+        text-align: center;
+        margin-bottom: 50px;
+
+        .like-text.popup-text {
+            font-size: 50px;
+            font-weight: 900;
+            letter-spacing: 5px;
+
+            .text-effect {
+                position: relative;
+                display: inline-block;
+                color: #FFF;
+                font-family: "Oswald", sans-serif;
+                font-size: 70px;
+                font-weight: bolder;
+                text-align: center;
+                letter-spacing: 20px;
+                transition: 0.5s;
+                text-shadow: 0 5px 0 black, 0 10px 40px rgba(0, 0, 0, 0.2), 0 20px 30px rgba(0, 0, 0, 0.2), 0 30px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            .text-effect:hover {
+                text-shadow: -10px 10px 0 black, 0 10px 40px rgba(0, 0, 0, 0.2), 0 20px 30px rgba(0, 0, 0, 0.5), 20px 20px 20px rgba(0, 0, 0, 0.5);
+            }
+
+            .text-effect:nth-child(1):before,
+            .text-effect:nth-child(2)::before,
+            .text-effect:nth-child(3)::before,
+            .text-effect:nth-child(4)::before,
+            .text-effect:nth-child(5)::before,
+            .text-effect:nth-child(6)::before,
+            .text-effect:nth-child(7)::before,
+            .text-effect:nth-child(8)::before,
+            .text-effect:nth-child(9):before {
+                top: -5px;
+                left: 0;
+                position: absolute;
+                text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+                color: $orange;
+                transition: 0.5s;
+                z-index: 1;
+                content: "W";
+            }
+
+            .text-effect:nth-child(2)::before {
+                content: 'H';
+            }
+
+            .text-effect:nth-child(3)::before {
+                content: 'A';
+            }
+
+            .text-effect:nth-child(4)::before {
+                content: 'T';
+            }
+
+            .text-effect:nth-child(5)::before {
+                content: 'W';
+            }
+
+            .text-effect:nth-child(6)::before {
+                content: 'E';
+            }
+
+            .text-effect:nth-child(7)::before {
+                content: 'D';
+            }
+
+            .text-effect:nth-child(8)::before {
+                content: '0';
+            }
+
+            .text-effect:nth-child(9)::before {
+                content: '?';
+            }
+
+            .text-effect:hover::before {
+                top: -10px;
+                left: 10px;
+            }
+
+            .text-effect:nth-child(1):after,
+            .text-effect:nth-child(2):after,
+            .text-effect:nth-child(3):after,
+            .text-effect:nth-child(4):after,
+            .text-effect:nth-child(5):after,
+            .text-effect:nth-child(6):after,
+            .text-effect:nth-child(7):after,
+            .text-effect:nth-child(8):after,
+            .text-effect:nth-child(9):after {
+                top: -10px;
+                left: 0;
+                position: absolute;
+                text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+                color: #fff;
+                transition: 0.5s;
+                content: "W";
+                z-index: 2;
+            }
+
+            .text-effect:nth-child(2):after {
+                content: 'H';
+            }
+
+            .text-effect:nth-child(3):after {
+                content: 'A';
+            }
+
+            .text-effect:nth-child(4):after {
+                content: 'T';
+            }
+
+            .text-effect:nth-child(5):after {
+                content: 'W';
+            }
+
+            .text-effect:nth-child(6):after {
+                content: 'E';
+            }
+
+            .text-effect:nth-child(7):after {
+                content: 'D';
+            }
+
+            .text-effect:nth-child(8):after {
+                content: 'O';
+            }
+
+            .text-effect:nth-child(9):after {
+                content: '?';
+            }
+
+            .text-effect:hover::after {
+                top: -20px;
+                left: 20px;
+            }
+        }
+    }
+
+    &__supportContent {
+        .main--text {
+            font-size: 1.5rem;
+            text-align: center;
+            color: #fff;
+        }
+    }
+}
