@@ -132,7 +132,9 @@ img {
 
     @media (min-width:320px) and (max-width: 768px) {
         padding: 10px 30px;
-        width: 130px;
+        width: 100%;
+        max-width: 200px;
+        font-size: 18px;
     }
 }
 
@@ -181,7 +183,7 @@ header {
                 width: 200px;
 
                 @media (min-width: 320px)and (max-width: 768px) {
-                    width: 100px;
+                    width: 130px;
                 }
             }
         }
@@ -241,6 +243,7 @@ header {
 
     .fa-bars {
         display: none;
+        font-size: 30px;
 
         @media(min-width:320px)and (max-width: 768px) {
             display: block;
@@ -275,13 +278,17 @@ main {
         color: #fff;
 
         @media(min-width: 320px)and (max-width: 768px) {
-            top: 30%;
+            top: 20%;
         }
     }
 
     &__content {
         background-color: rgba(0, 0, 0, 0.634);
         padding: 100px 20px;
+
+        @media(min-width: 320px) and (max-width:768px) {
+            padding: 50px 20px;
+        }
 
         a {
             @media(min-width:320px)and (max-width: 768px) {
@@ -326,8 +333,9 @@ main {
             }
         }
     }
-    &__button{
-        a{
+
+    &__button {
+        a {
             margin: 0 auto;
         }
     }
@@ -469,6 +477,11 @@ main {
         @include partialFlex;
         align-items: center;
         flex-wrap: wrap;
+
+        @media(min-width: 320px)and (max-width: 768px) {
+            gap: 50px;
+        }
+
     }
 
     &__leftSide {
@@ -633,6 +646,7 @@ footer {
     ul {
         @include flexbox;
         gap: 100px;
+
         li {
             margin: 0 20px 40px;
             text-transform: uppercase;
@@ -646,8 +660,8 @@ footer {
                 border-bottom: rgba(0, 0, 0, 0) 2px solid;
                 padding-bottom: 5px;
                 letter-spacing: 2px;
-                
-                i{
+
+                i {
                     font-size: 2rem;
                 }
             }

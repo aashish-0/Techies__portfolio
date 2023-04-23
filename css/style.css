@@ -59,7 +59,9 @@ img {
 @media (min-width: 320px) and (max-width: 768px) {
   .btn {
     padding: 10px 30px;
-    width: 130px;
+    width: 100%;
+    max-width: 200px;
+    font-size: 18px;
   }
 }
 
@@ -128,7 +130,7 @@ header {
 }
 @media (min-width: 320px) and (max-width: 768px) {
   .header__brandLogo a img {
-    width: 100px;
+    width: 130px;
   }
 }
 @media (min-width: 320px) and (max-width: 768px) {
@@ -179,6 +181,7 @@ header {
 }
 .header .fa-bars {
   display: none;
+  font-size: 30px;
 }
 @media (min-width: 320px) and (max-width: 768px) {
   .header .fa-bars {
@@ -214,12 +217,17 @@ main {
 }
 @media (min-width: 320px) and (max-width: 768px) {
   .banner__content--wrapper {
-    top: 30%;
+    top: 20%;
   }
 }
 .banner__content {
   background-color: rgba(0, 0, 0, 0.634);
   padding: 100px 20px;
+}
+@media (min-width: 320px) and (max-width: 768px) {
+  .banner__content {
+    padding: 50px 20px;
+  }
 }
 @media (min-width: 320px) and (max-width: 768px) {
   .banner__content a {
@@ -388,6 +396,11 @@ main {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+}
+@media (min-width: 320px) and (max-width: 768px) {
+  .contact__wrapper {
+    gap: 50px;
+  }
 }
 .contact__leftSide {
   background-color: #939393;
