@@ -589,6 +589,7 @@ footer {
 .vision {
   background-color: #e3e0e0;
 }
+
 .vision {
   padding-block: 60px;
 }
@@ -686,7 +687,8 @@ footer {
 }
 .vision__supportContent .main--text {
   font-size: 1.5rem;
-  text-align: center;
+  text-align: justify;
+  letter-spacing: 1px;
 }
 
 .whatwedo {
@@ -811,6 +813,7 @@ footer {
 }
 .whatwedo__supportContent .main--text {
   font-size: 1.5rem;
-  text-align: center;
+  text-align: justify;
   color: #fff;
+  letter-spacing: 1px;
 }

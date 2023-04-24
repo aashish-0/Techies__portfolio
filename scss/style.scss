@@ -681,8 +681,6 @@ footer {
 
 .vision {
     background-color: #e3e0e0;
-
-    &__heading {}
 }
 
 .vision {
@@ -801,7 +799,8 @@ footer {
     &__supportContent {
         .main--text {
             font-size: 1.5rem;
-            text-align: center;
+            text-align: justify;
+            letter-spacing: 1px;
         }
     }
 }
@@ -953,8 +952,12 @@ footer {
     &__supportContent {
         .main--text {
             font-size: 1.5rem;
-            text-align: center;
+            text-align: justify;
             color: #fff;
+            letter-spacing: 1px;
         }
     }
 }
+
+
+// SERVICES PAGE    
